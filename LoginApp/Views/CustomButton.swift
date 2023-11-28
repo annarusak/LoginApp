@@ -2,14 +2,14 @@ import UIKit
 
 class CustomButton: UIButton {
 
+    let uiElementsColor = UIColor(red: 103/255, green: 194/255, blue: 241/255, alpha: 1)
+    
     enum FontSize {
         case big
         case medium
         case small
         case tiny
     }
-    
-    let uiElementsColor = UIColor(red: 103/255, green: 194/255, blue: 241/255, alpha: 1)
     
     init(title: String, hasBackground: Bool = false, fontSize: FontSize) {
         super.init(frame: .zero)
