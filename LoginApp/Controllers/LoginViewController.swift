@@ -1,8 +1,10 @@
 import UIKit
 
-class LoginController: UIViewController {
+class LoginViewController: UIViewController {
 
     // MARK: - UI Components
+    let backgroundColor = UIColor(red: 25/255, green: 30/255, blue: 49/255, alpha: 1)
+    
     private let headerView = HeaderView(title: "Sign In", subtitle: "Sign In to your account")
     
     private let emailField = CustomTextField(fieldType: .email)
@@ -11,8 +13,6 @@ class LoginController: UIViewController {
     private let signInButton = CustomButton(title: "Sign In", hasBackground: true, fontSize: .big)
     private let newUserButton = CustomButton(title: "Create account", fontSize: .medium)
     private let forgotPasswordButton = CustomButton(title: "Forgot password?", fontSize: .tiny)
-    
-    let backgroundColor = UIColor(red: 25/255, green: 30/255, blue: 49/255, alpha: 1)
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class LoginController: UIViewController {
     
     // MARK: - UI Setup
     private func setupUI() {
-        self.view.backgroundColor = backgroundColor
+        view.backgroundColor = backgroundColor
         
         view.addSubview(headerView)
         view.addSubview(emailField)
@@ -85,6 +85,8 @@ class LoginController: UIViewController {
     
     @objc private func didTapNewUser() {
         print("newUserTapped")
+        let vc = RegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapForgotPassword() {
