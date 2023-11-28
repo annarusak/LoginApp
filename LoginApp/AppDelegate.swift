@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  LoginApp
-//
-//  Created by Анна on 27.11.23.
-//
-
 import UIKit
 
 @main
