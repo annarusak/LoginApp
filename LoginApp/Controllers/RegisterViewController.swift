@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        
+        termsTextView.delegate = self
         self.signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
     }
@@ -114,5 +114,30 @@ class RegisterViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
 
+}
+
+
+extension RegisterViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        if URL.scheme == "terms" {
+            self.showWebViewController(with: "https://policies.google.com/terms?hl=en-US")
+        } else if URL.scheme == "privacy" {
+            self.showWebViewController(with: "https://policies.google.com/privacy?hl=en-US")
+        }
+        return true
+    }
+    
+    private func showWebViewController(with urlString: String) {
+        let vc = WebViewController(with: urlString)
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        textView.delegate = nil
+        textView.selectedTextRange = nil
+        textView.delegate = self
+    }
+    
 }
 
