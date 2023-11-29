@@ -107,6 +107,8 @@ class RegisterViewController: UIViewController {
     // MARK: - Selectors
     @objc private func didTapSignUp() {
         print("didTapSignUp")
+        let vc = HomeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapSignIn() {
