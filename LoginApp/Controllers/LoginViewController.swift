@@ -81,6 +81,8 @@ class LoginViewController: UIViewController {
     // MARK: - Selectors
     @objc private func didTapSignIn() {
         print("signInTapped")
+        let vc = HomeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapNewUser() {
