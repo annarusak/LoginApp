@@ -118,7 +118,7 @@ class RegisterViewController: UIViewController {
 
 }
 
-
+    // MARK: - Extensions
 extension RegisterViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.scheme == "terms" {

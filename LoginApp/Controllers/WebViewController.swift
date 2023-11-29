@@ -3,6 +3,7 @@ import WebKit
 
 class WebViewController: UIViewController {
 
+    // MARK: - UI Components
     private let urlString: String
     private let webView = WKWebView()
     
@@ -15,6 +16,7 @@ class WebViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -26,21 +28,23 @@ class WebViewController: UIViewController {
         self.webView.load(URLRequest(url: url))
     }
     
+    // MARK: - UI Setup
     private func setupUI() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(didTapDone))
         self.navigationController?.navigationBar.backgroundColor = .secondarySystemBackground
         
-        self.view.addSubview(webView)
-        self.webView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(webView)
+        webView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.webView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            self.webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.webView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.webView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            webView.topAnchor.constraint(equalTo: view.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
     
+    // MARK: - Selectors
     @objc private func didTapDone() {
         self.dismiss(animated: true, completion: nil)
     }
