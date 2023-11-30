@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F454C1382B174C370044BA28 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454C1372B174C370044BA28 /* WebViewController.swift */; };
 		F454C13A2B1750A50044BA28 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454C1392B1750A50044BA28 /* HomeViewController.swift */; };
+		F454C13C2B1795ED0044BA28 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454C13B2B1795ED0044BA28 /* ForgotPasswordViewController.swift */; };
 		F4A8F8142B14FCA400C7180C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8F8132B14FCA400C7180C /* AppDelegate.swift */; };
 		F4A8F8162B14FCA400C7180C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8F8152B14FCA400C7180C /* SceneDelegate.swift */; };
 		F4A8F81D2B14FCA500C7180C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A8F81C2B14FCA500C7180C /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		F454C1372B174C370044BA28 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F454C1392B1750A50044BA28 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F454C13B2B1795ED0044BA28 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		F4A8F8102B14FCA400C7180C /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A8F8132B14FCA400C7180C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4A8F8152B14FCA400C7180C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				F4A8F8312B16314F00C7180C /* RegisterViewController.swift */,
 				F454C1372B174C370044BA28 /* WebViewController.swift */,
 				F454C1392B1750A50044BA28 /* HomeViewController.swift */,
+				F454C13B2B1795ED0044BA28 /* ForgotPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				F4A8F8142B14FCA400C7180C /* AppDelegate.swift in Sources */,
 				F4A8F8162B14FCA400C7180C /* SceneDelegate.swift in Sources */,
 				F454C13A2B1750A50044BA28 /* HomeViewController.swift in Sources */,
+				F454C13C2B1795ED0044BA28 /* ForgotPasswordViewController.swift in Sources */,
 				F4A8F82C2B150FB400C7180C /* CustomButton.swift in Sources */,
 				F4A8F8302B15109A00C7180C /* HeaderView.swift in Sources */,
 				F454C1382B174C370044BA28 /* WebViewController.swift in Sources */,

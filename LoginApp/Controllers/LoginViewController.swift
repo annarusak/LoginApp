@@ -17,15 +17,15 @@ class LoginViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
-        self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
-        self.newUserButton.addTarget(self, action: #selector(didTapNewUser), for: .touchUpInside)
-        self.forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
+        setupUI()
+        signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        newUserButton.addTarget(self, action: #selector(didTapNewUser), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: - UI Setup
@@ -80,19 +80,18 @@ class LoginViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapSignIn() {
-        print("signInTapped")
         let vc = HomeViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapNewUser() {
-        print("newUserTapped")
         let vc = RegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapForgotPassword() {
-        print("forgotPasswordTapped")
+        let vc = ForgotPasswordViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 
