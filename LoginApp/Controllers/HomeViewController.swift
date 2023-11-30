@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
         
-        self.setupUI()
+        setupUI()
         label.text = "Anna Rusak\nanna@gmail.com"
     }
     
@@ -46,7 +46,6 @@ class HomeViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapLogout() {
-        print("didTapLogout")
         self.navigationController?.popToRootViewController(animated: true)
     }
 

@@ -36,10 +36,10 @@ class RegisterViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
+        setupUI()
         termsTextView.delegate = self
-        self.signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
-        self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
+        signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,19 +106,17 @@ class RegisterViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapSignUp() {
-        print("didTapSignUp")
         let vc = HomeViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapSignIn() {
-        print("didTapSignIn")
         self.navigationController?.popToRootViewController(animated: true)
     }
 
 }
 
-
+    // MARK: - Extensions
 extension RegisterViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.scheme == "terms" {
