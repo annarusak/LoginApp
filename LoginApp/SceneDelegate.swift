@@ -16,6 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         self.window?.rootViewController = nav
+        
+        // Test
+        let userRequest = RegisterUserRequest(username: "anna", email: "anna@gmail.com", password: "123456")
+        AuthenticationService.shared.registerUser(with: userRequest) { wasRegistered, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print(wasRegistered, "wasRegistered")
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
