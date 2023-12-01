@@ -12,6 +12,8 @@
 		F454C13A2B1750A50044BA28 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454C1392B1750A50044BA28 /* HomeViewController.swift */; };
 		F454C13C2B1795ED0044BA28 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454C13B2B1795ED0044BA28 /* ForgotPasswordViewController.swift */; };
 		F46D70A42B1A082F00809758 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F46D70A32B1A082F00809758 /* GoogleService-Info.plist */; };
+		F46D70A62B1A29F200809758 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D70A52B1A29F200809758 /* AuthenticationService.swift */; };
+		F46D70A92B1A2B6F00809758 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46D70A82B1A2B6F00809758 /* RegisterUserRequest.swift */; };
 		F4A8F8142B14FCA400C7180C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8F8132B14FCA400C7180C /* AppDelegate.swift */; };
 		F4A8F8162B14FCA400C7180C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A8F8152B14FCA400C7180C /* SceneDelegate.swift */; };
 		F4A8F81D2B14FCA500C7180C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A8F81C2B14FCA500C7180C /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		F454C1392B1750A50044BA28 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F454C13B2B1795ED0044BA28 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		F46D70A32B1A082F00809758 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F46D70A52B1A29F200809758 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		F46D70A82B1A2B6F00809758 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
 		F4A8F8102B14FCA400C7180C /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A8F8132B14FCA400C7180C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4A8F8152B14FCA400C7180C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +66,6 @@
 				237E87914CA68E0D53E3EBD8 /* Pods-LoginApp.debug.xcconfig */,
 				7AA5EE9477825CC478F0F2BB /* Pods-LoginApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -72,6 +75,14 @@
 				973DD6E4231039A666BC1DCD /* Pods_LoginApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F46D70A72B1A2B4F00809758 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F46D70A82B1A2B6F00809758 /* RegisterUserRequest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F4A8F8072B14FCA400C7180C = {
@@ -95,6 +106,8 @@
 		F4A8F8122B14FCA400C7180C /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
+				F46D70A52B1A29F200809758 /* AuthenticationService.swift */,
+				F46D70A72B1A2B4F00809758 /* Model */,
 				F4A8F8282B150D4000C7180C /* Views */,
 				F4A8F8272B150D2D00C7180C /* Controllers */,
 				F4A8F8132B14FCA400C7180C /* AppDelegate.swift */,
@@ -248,10 +261,12 @@
 				F4A8F82E2B15100600C7180C /* CustomTextField.swift in Sources */,
 				F4A8F8322B16314F00C7180C /* RegisterViewController.swift in Sources */,
 				F4A8F8142B14FCA400C7180C /* AppDelegate.swift in Sources */,
+				F46D70A62B1A29F200809758 /* AuthenticationService.swift in Sources */,
 				F4A8F8162B14FCA400C7180C /* SceneDelegate.swift in Sources */,
 				F454C13A2B1750A50044BA28 /* HomeViewController.swift in Sources */,
 				F454C13C2B1795ED0044BA28 /* ForgotPasswordViewController.swift in Sources */,
 				F4A8F82C2B150FB400C7180C /* CustomButton.swift in Sources */,
+				F46D70A92B1A2B6F00809758 /* RegisterUserRequest.swift in Sources */,
 				F4A8F8302B15109A00C7180C /* HeaderView.swift in Sources */,
 				F454C1382B174C370044BA28 /* WebViewController.swift in Sources */,
 			);
