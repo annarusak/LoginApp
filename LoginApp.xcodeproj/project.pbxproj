@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E5A231268B82E9D847344B94 /* Pods_LoginApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973DD6E4231039A666BC1DCD /* Pods_LoginApp.framework */; };
 		F43A77E42B1E328900C3A1C1 /* UserInfoValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A77E32B1E328900C3A1C1 /* UserInfoValidation.swift */; };
+		F43A77E62B1E703500C3A1C1 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43A77E52B1E703500C3A1C1 /* LoginUserRequest.swift */; };
 		F454C1382B174C370044BA28 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454C1372B174C370044BA28 /* WebViewController.swift */; };
 		F454C13A2B1750A50044BA28 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454C1392B1750A50044BA28 /* HomeViewController.swift */; };
 		F454C13C2B1795ED0044BA28 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454C13B2B1795ED0044BA28 /* ForgotPasswordViewController.swift */; };
@@ -31,6 +32,7 @@
 		7AA5EE9477825CC478F0F2BB /* Pods-LoginApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginApp.release.xcconfig"; path = "Target Support Files/Pods-LoginApp/Pods-LoginApp.release.xcconfig"; sourceTree = "<group>"; };
 		973DD6E4231039A666BC1DCD /* Pods_LoginApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43A77E32B1E328900C3A1C1 /* UserInfoValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoValidation.swift; sourceTree = "<group>"; };
+		F43A77E52B1E703500C3A1C1 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
 		F454C1372B174C370044BA28 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F454C1392B1750A50044BA28 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F454C13B2B1795ED0044BA28 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F46D70A82B1A2B6F00809758 /* RegisterUserRequest.swift */,
+				F43A77E52B1E703500C3A1C1 /* LoginUserRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				F4A8F82E2B15100600C7180C /* CustomTextField.swift in Sources */,
 				F4A8F8322B16314F00C7180C /* RegisterViewController.swift in Sources */,
 				F4A8F8142B14FCA400C7180C /* AppDelegate.swift in Sources */,
+				F43A77E62B1E703500C3A1C1 /* LoginUserRequest.swift in Sources */,
 				F46D70A62B1A29F200809758 /* AuthenticationService.swift in Sources */,
 				F4A8F8162B14FCA400C7180C /* SceneDelegate.swift in Sources */,
 				F454C13A2B1750A50044BA28 /* HomeViewController.swift in Sources */,

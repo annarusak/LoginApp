@@ -143,9 +143,6 @@ class RegisterViewController: UIViewController {
                 print("Registration error")
             }
         }
-        
-        let vc = HomeViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapSignIn() {
