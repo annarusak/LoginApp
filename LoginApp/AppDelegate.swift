@@ -9,27 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        
-        // Email Validation Test
-        print("EMAIL DEBUG PRINT:", UserInfoValidation.isValidEmail(email: ""))
-        print("EMAIL DEBUG PRINT:", UserInfoValidation.isValidEmail(email: "anna"))
-        print("EMAIL DEBUG PRINT:", UserInfoValidation.isValidEmail(email: "anna@"))
-        print("EMAIL DEBUG PRINT:", UserInfoValidation.isValidEmail(email: "anna@gmail"))
-        print("EMAIL DEBUG PRINT:", UserInfoValidation.isValidEmail(email: "anna@gmail..com"))
-        print("EMAIL DEBUG PRINT:", UserInfoValidation.isValidEmail(email: "anna@@gmail.com"))
-        print("EMAIL DEBUG PRINT:", UserInfoValidation.isValidEmail(email: "anna@gmail.com"))
-        
-        // Password Validation Test
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: ""))
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: "password"))
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: "password1"))
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: "password$"))
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: "password1$"))
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: "Password"))
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: "Password1"))
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: "Password$"))
-        print("PASSWORD DEBUG PRINT:", UserInfoValidation.isValidPassword(password: "Password"))
-        
         return true
     }
 

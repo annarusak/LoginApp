@@ -80,8 +80,34 @@ class LoginViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapSignIn() {
-        let vc = HomeViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let loginRequest = LoginUserRequest(email: emailField.text ?? "",
+                                            password: passwordField.text ?? "")
+
+        // Email check
+        if !UserInfoValidation.isValidEmail(email: loginRequest.email) {
+            print("Is invalid email")
+            return
+        }
+
+        // Password check
+        if !UserInfoValidation.isValidPassword(password: loginRequest.password) {
+            print("Is invalid password")
+            return
+        }
+        
+        AuthenticationService.shared.signIn(with: loginRequest) { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                print("Is sign in error")
+            }
+            
+            if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                sceneDelegate.checkAuthentication()
+            }
+        }
     }
     
     @objc private func didTapNewUser() {
