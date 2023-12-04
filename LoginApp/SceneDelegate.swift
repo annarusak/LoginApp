@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -11,20 +12,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         self.window?.makeKeyAndVisible()
-        
-        let vc = LoginViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        self.window?.rootViewController = nav
-        
-        // Test
-        let userRequest = RegisterUserRequest(username: "anna", email: "anna@gmail.com", password: "123456")
-        AuthenticationService.shared.registerUser(with: userRequest) { wasRegistered, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            print(wasRegistered, "wasRegistered")
+
+        self.checkAuthentication()
+    }
+    
+    public func checkAuthentication() {
+        if Auth.auth().currentUser == nil {
+            let vc = LoginViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.window?.rootViewController = nav
+        } else {
+            let vc = HomeViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.window?.rootViewController = nav
         }
     }
 
