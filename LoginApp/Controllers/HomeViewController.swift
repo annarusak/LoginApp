@@ -46,7 +46,16 @@ class HomeViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapLogout() {
-        self.navigationController?.popToRootViewController(animated: true)
+        AuthenticationService.shared.signOut { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                sceneDelegate.checkAuthentication()
+            }
+        }
     }
 
 }

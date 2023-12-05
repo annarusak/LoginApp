@@ -80,8 +80,8 @@ class LoginViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapSignIn() {
-        let loginRequest = LoginUserRequest(email: emailField.text ?? "",
-                                            password: passwordField.text ?? "")
+        let loginRequest = LoginUserRequest(email: self.emailField.text ?? "",
+                                            password: self.passwordField.text ?? "")
 
         // Email check
         if !UserInfoValidation.isValidEmail(email: loginRequest.email) {
@@ -100,10 +100,7 @@ class LoginViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
                 return
-            } else {
-                print("Is sign in error")
             }
-            
             if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
                 sceneDelegate.checkAuthentication()
             }

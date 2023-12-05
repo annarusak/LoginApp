@@ -106,10 +106,9 @@ class RegisterViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapSignUp() {
-        
-        let registerUserRequest = RegisterUserRequest(username: usernameField.text ?? "",
-                                                      email: emailField.text ?? "",
-                                                      password: passwordField.text ?? "")
+        let registerUserRequest = RegisterUserRequest(username: self.usernameField.text ?? "",
+                                                      email: self.emailField.text ?? "",
+                                                      password: self.passwordField.text ?? "")
         // Username check
         if !UserInfoValidation.isValidUsername(username: registerUserRequest.username) {
             print("Is invalid username")
