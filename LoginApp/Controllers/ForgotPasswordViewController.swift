@@ -57,7 +57,19 @@ class ForgotPasswordViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapResetPassword() {
-        print("Reset password did tap")
+        let email = self.emailField.text ?? ""
+        
+        if !UserInfoValidation.isValidEmail(email: email) {
+            print("Is invalid email")
+            return
+        }
+        AuthenticationService.shared.forgotPassword(email: email) { error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            print("Password sended to your email")
+        }
     }
 
 }
