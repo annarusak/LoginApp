@@ -23,7 +23,17 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         
         setupUI()
-        label.text = "Anna Rusak\nanna@gmail.com"
+        
+        AuthenticationService.shared.fetchUser { [weak self] user, error in
+            guard let self = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            if let user = user {
+                self.label.text = "\(user.username)\n\(user.email)"
+            }
+        }
     }
     
 

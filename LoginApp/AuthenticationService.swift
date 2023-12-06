@@ -70,4 +70,24 @@ class AuthenticationService {
         }
     }
     
+    public func fetchUser(completion: @escaping (User?, Error?) -> Void) {
+        guard let userUID = Auth.auth().currentUser?.uid else { return }
+        
+        let database = Firestore.firestore()
+        
+        database.collection("users").document(userUID).getDocument { snapshot, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            if let snapshot = snapshot,
+               let snapshotData = snapshot.data(),
+               let username = snapshotData["username"] as? String,
+               let email = snapshotData["email"] as? String {
+                let user = User(username: username, email: email, userUID: userUID)
+                completion(user, nil)
+            }
+        }
+    }
+    
 }
