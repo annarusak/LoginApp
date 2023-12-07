@@ -13,7 +13,7 @@ class AuthenticationService {
     /// - Parameters:
     ///   - userRequest: information about user (username, email and password)
     ///   - completion: completion with two values (Bool, Error?) :
-    ///   - Bool: determines whether user registration is successful
+    ///   - Bool: wasRegistered - determines whether user registration is successful
     ///   - Error?: users registration and saving in Firebase error
     public func registerUser(with userRequest: RegisterUserRequest, completion: @escaping (Bool, Error?) -> Void) {
         let username = userRequest.username
