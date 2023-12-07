@@ -111,27 +111,26 @@ class RegisterViewController: UIViewController {
                                                       password: self.passwordField.text ?? "")
         // Username check
         if !UserInfoValidation.isValidUsername(username: registerUserRequest.username) {
-            print("Is invalid username")
+            AlertManager.showInvalidUsernameAlert(on: self)
             return
         }
         
         // Email check
         if !UserInfoValidation.isValidEmail(email: registerUserRequest.email) {
-            print("Is invalid email")
+            AlertManager.showInvalidEmailAlert(on: self)
             return
         }
         
         // Password check
         if !UserInfoValidation.isValidPassword(password: registerUserRequest.password) {
-            print("Is invalid password")
+            AlertManager.showInvalidPasswordAlert(on: self)
             return
         }
         
         AuthenticationService.shared.registerUser(with: registerUserRequest) { [weak self] wasRegistered, error in
             guard let self = self else { return }
-            
             if let error = error {
-                print(error.localizedDescription)
+                AlertManager.showRegistrationErrorAlert(on: self, error: error)
                 return
             }
             if wasRegistered {
@@ -139,7 +138,7 @@ class RegisterViewController: UIViewController {
                     sceneDelegate.checkAuthentication()
                 }
             } else {
-                print("Registration error")
+                AlertManager.showRegistrationErrorAlert(on: self)
             }
         }
     }

@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
         AuthenticationService.shared.fetchUser { [weak self] user, error in
             guard let self = self else { return }
             if let error = error {
-                print(error.localizedDescription)
+                AlertManager.showFetchingUserErrorAlert(on: self, error: error)
                 return
             }
             if let user = user {
@@ -36,7 +36,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-
     
     // MARK: - UI Setup
     private func setupUI() {
@@ -59,7 +58,7 @@ class HomeViewController: UIViewController {
         AuthenticationService.shared.signOut { [weak self] error in
             guard let self = self else { return }
             if let error = error {
-                print(error.localizedDescription)
+                AlertManager.showLogoutErrorAlert(on: self, error: error)
                 return
             }
             if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {

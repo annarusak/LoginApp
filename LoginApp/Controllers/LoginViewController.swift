@@ -85,20 +85,20 @@ class LoginViewController: UIViewController {
 
         // Email check
         if !UserInfoValidation.isValidEmail(email: loginRequest.email) {
-            print("Is invalid email")
+            AlertManager.showInvalidEmailAlert(on: self)
             return
         }
 
         // Password check
         if !UserInfoValidation.isValidPassword(password: loginRequest.password) {
-            print("Is invalid password")
+            AlertManager.showInvalidPasswordAlert(on: self)
             return
         }
         
         AuthenticationService.shared.signIn(with: loginRequest) { [weak self] error in
             guard let self = self else { return }
             if let error = error {
-                print(error.localizedDescription)
+                AlertManager.showSignInErrorAlert(on: self, error: error)
                 return
             }
             if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
