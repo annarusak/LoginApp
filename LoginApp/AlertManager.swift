@@ -12,6 +12,7 @@ class AlertManager {
     
 }
 
+
 // MARK: - Extensions
 
 // Validation Error Alerts
@@ -68,3 +69,15 @@ extension AlertManager {
         self.showBasicAlert(on: vc, title: "Password Reset Sending Error", message: "\(error.localizedDescription)")
     }
 }
+
+// Fetching User Error Alerts
+extension AlertManager {
+    public static func showFetchingUserErrorAlert(on vc: UIViewController) {
+        self.showBasicAlert(on: vc, title: "Fetching User Error", message: nil)
+    }
+    
+    public static func showFetchingUserErrorAlert(on vc: UIViewController, error: Error) {
+        self.showBasicAlert(on: vc, title: "Fetching User Error", message: "\(error.localizedDescription)")
+    }
+}
+    

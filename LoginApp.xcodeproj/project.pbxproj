@@ -98,7 +98,6 @@
 		F4A8F8072B14FCA400C7180C = {
 			isa = PBXGroup;
 			children = (
-				F4BE64B02B21D28F000B3C8A /* AlertManager.swift */,
 				F4A8F8122B14FCA400C7180C /* LoginApp */,
 				F4A8F8112B14FCA400C7180C /* Products */,
 				072AF6575C4324BA80D6850F /* Pods */,
@@ -119,6 +118,7 @@
 			children = (
 				F46D70A52B1A29F200809758 /* AuthenticationService.swift */,
 				F43A77E32B1E328900C3A1C1 /* UserInfoValidation.swift */,
+				F4BE64B02B21D28F000B3C8A /* AlertManager.swift */,
 				F46D70A72B1A2B4F00809758 /* Model */,
 				F4A8F8282B150D4000C7180C /* Views */,
 				F4A8F8272B150D2D00C7180C /* Controllers */,
